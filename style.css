@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+
+:root {
+  --modal-duration: 1s;
+  --primary-color: #30336b;
+  --secondary-color: #be2edd;
+  --border-color: rgba(200, 200, 200, 0.1);
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: #fff;
+  font-family: 'Lato', sans-serif;
+  margin: 0;
+}
+
+nav {
+  background-color: var(--primary-color);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200px;
+  min-height: 100vh;
+  margin-right: 2px solid var(--border-color);
+  transform: translateX(-100%);
+  transition: transform 0.1s ease;
+}
+
+body.show-nav {
+  transform: translateX(200px);
+}
+
+nav .logo {
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+nav .logo img {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+nav ul {
+  list-style: none;
+  border-top: 2px solid var(--border-color);
+  margin: 0;
+}
+
+nav ul li {
+  padding: 20px;
+  width: 100%;
+  border-bottom: 2px solid var(--border-color);
+}
+
+header {
+  background-color: var(--primary-color);
+  text-align: center;
+  color: #fff;
+  position: relative;
+  padding: 40px 0;
+}
+
+header .toggle {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  padding: 5px 10px;
+  background: rgba(0, 0, 0, 0.4);
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+}
+
+header h1 {
+  font-size: 50px;
+}
+
+header p {
+  margin: 40px 0;
+  font-size: 24px;
+}
+
+header button {
+  padding: 10px 20px;
+  background: var(--secondary-color);
+  color: #fff;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.container {
+  padding: 15px;
+  width: 800px;
+  margin: 0 auto;
+}
+
+.container h2 {
+  margin: 20px 0;
+}
+
+.container ul {
+  padding: 20px 40px;
+}
+
+.modal-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  align-items: center;
+  justify-content: center;
+  display: none;
+}
+
+.modal-container.show-modal {
+  display: flex;
+}
+
+.modal {
+  background-color: #fff;
+  border-radius: 5px;
+  position: relative;
+  overflow: hidden;
+  width: 400px;
+  animation-name: modalopen;
+  animation-duration: 1s;
+}
+
+.modal .close {
+  position: absolute;
+  font-size: 25px;
+  right: 10px;
+  top: 5px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.modal-header {
+  background-color: var(--primary-color);
+  padding: 15px;
+  font-size: 16px;
+  color: #fff;
+  border-bottom: 1px solid #333;
+}
+
+.form {
+  padding: 20px;
+}
+
+.form p {
+  margin-block: 20px;
+}
+
+.form-control {
+  margin-bottom: 15px;
+}
+
+.form-control label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-control input {
+  width: 100%;
+  padding: 8px;
+}
+
+.form button {
+  padding: 8px 12px;
+  background-color: var(--secondary-color);
+  color: #fff;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+@keyframes modalopen {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
